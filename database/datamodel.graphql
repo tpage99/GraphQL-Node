@@ -3,4 +3,4 @@ type Link {
   createdAt: DateTime!
   description: String!
   url: String!
-}
+} 
