@@ -1,5 +1,6 @@
 # The HTTP endpoint for your Prisma API
-#endpoint: ''endpoint: https://us1.prisma.sh/taylor-page-9d8665/how-to-graphql-demo/dev
+#endpoint: ''
+endpoint: https://us1.prisma.sh/taylor-page-9d8665/how-to-graphql-demo/dev
 
 
 # Points to the file that holds your data model
