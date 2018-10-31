@@ -1,4 +1,5 @@
 const { GraphQLServer } = require('graphql-yoga')
+const { Prisma } = require('prisma-binding')
 
 //1
 const typeDefs = `
@@ -52,6 +53,15 @@ let links = [{
 const server = new GraphQLServer ({
     typeDefs: './src/schema.graphql',
     resolvers,
+    context: req => ({
+        ...req,
+        db: new Prisma({
+            typeDefs: 'src/generated/prisma.graphql',
+            endpoint: 'https://us1.prisma.sh/taylor-page-9d8665/how-to-graphql-demo/dev',
+            secret: 'mysecret123',
+            debug: true,
+        }),
+    }),
 })
 
 server.start(() => console.log('Server is up and running on http://localhost:4000'))

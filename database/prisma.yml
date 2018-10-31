@@ -6,5 +6,10 @@ endpoint: https://us1.prisma.sh/taylor-page-9d8665/how-to-graphql-demo/dev
 # Points to the file that holds your data model
 datamodel: datamodel.graphql
 
+#deploy hook
+hooks:
+  post-deploy:
+    - graphql get-schema --project database
+
 # You can only access the API when providing JWTs that are signed with this secret
 secret: mysecret123
